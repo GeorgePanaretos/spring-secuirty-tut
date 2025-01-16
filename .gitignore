@@ -36,3 +36,6 @@ out/
 
 # Maven wrapper
 .mvn/wrapper/maven-wrapper.jar
+
+# Target folder
+target/
