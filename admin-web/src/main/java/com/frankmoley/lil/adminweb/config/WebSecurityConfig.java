@@ -6,8 +6,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 
 import javax.sql.DataSource;
@@ -44,9 +42,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return new JdbcUserDetailsManager(dataSource);
     }
 
-    @Bean
-    public  static PasswordEncoder getPasswordEncoder(){
-        return NoOpPasswordEncoder.getInstance();
-    }
+//    @Bean
+//    public  static PasswordEncoder getPasswordEncoder(){
+//        return NoOpPasswordEncoder.getInstance();
+//    }
 
 }
