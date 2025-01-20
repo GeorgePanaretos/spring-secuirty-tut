@@ -41,17 +41,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    public void configure (AuthenticationManagerBuilder auth)throws Exception{
+    public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.ldapAuthentication()
-                .userDnPatterns("uid={0}, ou=people")
+                .userDnPatterns("uid={0},ou=people")
                 .groupSearchBase("ou=groups")
                 .contextSource()
-                .url("ldap://localhost:8389/dc=location, dc-org")
+                .url("ldap://localhost:8389/dc=landon,dc=org")
                 .and()
                 .passwordCompare()
                 .passwordEncoder(new BCryptPasswordEncoder())
-                .passwordAttribute("userPassword")
-                ;
+                .passwordAttribute("userPassword");
     }
     // Testing purposes
 //    @Bean
